@@ -1,0 +1,15 @@
+[Unit]
+Description=Telegram AI Agent
+After=network.target
+
+[Service]
+Type=simple
+User=root
+WorkingDirectory=/opt/tg-agent
+ExecStart=/opt/tg-agent/venv/bin/python3 bot.py
+Restart=always
+RestartSec=5
+KillSignal=SIGTERM
+
+[Install]
+WantedBy=multi-user.target
